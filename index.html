@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciador de Tarefas</h1>
+        
+        <!-- Formulário para criar/editar tarefas -->
+        <div class="card">
+            <h2 id="form-title">Nova Tarefa</h2>
+            <form id="task-form">
+                <input type="hidden" id="task-id">
+                
+                <div class="form-group">
+                    <label for="titulo">Título:</label>
+                    <input type="text" id="titulo" required> 3EFF-CBFD
+                </div>
+                
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <textarea id="descricao" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo" required>
+                        <option value="">Selecione um tipo</option>
+                        <option value="Pessoal">Pessoal</option>
+                        <option value="Profissional">Profissional</option>
+                    </select>
+                </div>
+                
+                <div class="button-group">
+                    <button type="submit" class="btn-primary">Salvar</button>
+                    <button type="button" id="btn-cancel" class="btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Lista de tarefas -->
+        <div class="card">
+            <div class="card-header">
+                <h2>Minhas Tarefas</h2>
+                <button id="btn-refresh" class="btn-refresh">
+                    <span class="refresh-icon">↻</span>
+                </button>
+            </div>
+            
+            <div id="tasks-container">
+                <p id="loading-message">Carregando tarefas...</p>
+                <p id="empty-message" style="display: none;">Nenhuma tarefa encontrada.</p>
+                <ul id="tasks-list"></ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast para notificações -->
+    <div id="toast" class="toast"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
